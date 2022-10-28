@@ -290,7 +290,7 @@ const comprar = () => {
         if (busqueda == 0) {
           break;
         } else {
-          // buscar corona 330ml - quilmes clasica lata - skyy sriginal
+          // buscar corona 330ml - skyy sriginal - quilmes clasica lata
           for (const bebida of bebidas) {
             if (busqueda == bebida.name) {
               bebidaBuscada = bebida.name + " Precio: $" + bebida.price + "\r";
