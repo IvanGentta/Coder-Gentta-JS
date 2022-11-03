@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 180px;
+  height: 180px;
+}
+
+nav {
+  width: 100%;
+  background-color: rgb(209, 255, 255);
+  border-bottom: 1px solid black;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#productos {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.producto {
+  width: 180px;
+  height: 280px;
+  background: linear-gradient(125deg, rgb(209, 255, 255), rgb(64, 178, 212));
+  margin: 15px;
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 1px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
