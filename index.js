@@ -6,7 +6,7 @@ const bebidas = [
     price: 200,
     cantidad: "473ml",
     mayorEdad: true,
-    imgUrl: "./img/quilmes-lata.jpg",
+    imgUrl: "/img/quilmes-lata.jpg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const bebidas = [
     price: 310,
     cantidad: "473ml",
     mayorEdad: true,
-    imgUrl: "./img/stella-lata.jpg",
+    imgUrl: "/img/stella-lata.jpg",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const bebidas = [
     price: 300,
     cantidad: "330ml",
     mayorEdad: true,
-    imgUrl: "./img/corona-chica.jpg",
+    imgUrl: "/img/corona-chica.jpg",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const bebidas = [
     price: 530,
     cantidad: "710ml",
     mayorEdad: true,
-    imgUrl: "./img/corona-grande.jpg",
+    imgUrl: "/img/corona-grande.jpg",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const bebidas = [
     price: 2764,
     cantidad: "700ml",
     mayorEdad: true,
-    imgUrl: "./img/absolute-pomelo.jpg",
+    imgUrl: "/img/absolute-pomelo.jpg",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const bebidas = [
     price: 1360,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/skyy-original.jpg",
+    imgUrl: "/img/skyy-original.jpg",
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const bebidas = [
     price: 1650,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/skyy-raspberry.jpg",
+    imgUrl: "/img/skyy-raspberry.jpg",
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ const bebidas = [
     price: 1340,
     cantidad: "700ml",
     mayorEdad: true,
-    imgUrl: "./img/sernova-original.jpg",
+    imgUrl: "/img/sernova-original.jpg",
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ const bebidas = [
     price: 2140,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/ron-havana.jpg",
+    imgUrl: "/img/ron-havana.jpg",
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ const bebidas = [
     price: 1500,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/gin-merle.jpg",
+    imgUrl: "/img/gin-merle.jpg",
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ const bebidas = [
     price: 1500,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/fernet.jpg",
+    imgUrl: "/img/fernet.jpg",
   },
   {
     id: 12,
@@ -105,7 +105,7 @@ const bebidas = [
     price: 985,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/vino-emilia.jpg",
+    imgUrl: "/img/vino-emilia.jpg",
   },
   {
     id: 13,
@@ -114,7 +114,7 @@ const bebidas = [
     price: 780,
     cantidad: "750ml",
     mayorEdad: true,
-    imgUrl: "./img/vino-novecento.jpg",
+    imgUrl: "/img/vino-novecento.jpg",
   },
   //   {
   //     id: 14,
@@ -215,18 +215,56 @@ const bebidas = [
 ];
 
 let productos = document.getElementById("productos");
+let searchInput = document.getElementById("search");
 
-for (const bebida of bebidas) {
-  let tarjetaBebida = document.createElement("div");
-  tarjetaBebida.className = "producto";
-  tarjetaBebida.innerHTML = `
+searchInput.oninput = () => {
+  let bebidasFiltradas = bebidas.filter((bebida) =>
+    bebida.name.includes(searchInput.value)
+  );
+  render(bebidasFiltradas);
+};
+let botones = document.getElementsByClassName("boton");
+let carrito = document.getElementById("carrito");
+
+console.log(botones);
+for (const boton of botones) {
+  // e = info del evento
+  boton.onclick = (e) => {
+    let bebidaBuscada = bebidas.find((bebida) => bebida.id == e.target.id);
+    let tarjetaCarrito = document.createElement("div");
+    tarjetaCarrito.className = "tarjetaCarrito";
+    tarjetaCarrito.innerHTML = `
+     <img src= ${bebidaBuscada.imgUrl}>
+      <div>
+       <h3>${bebidaBuscada.name}</h3>
+       <h3>$${bebidaBuscada.price}</h3>
+      </div>
+    `;
+    carrito.append(tarjetaCarrito);
+  };
+}
+//Funciones
+const render = (bebidasFiltradas) => {
+  let bebidasRenderizar = bebidas;
+  if (bebidasFiltradas) {
+    bebidasRenderizar = bebidasFiltradas;
+  }
+
+  productos.innerHTML = "";
+
+  for (const bebida of bebidasRenderizar) {
+    let tarjetaBebida = document.createElement("div");
+    tarjetaBebida.className = "producto";
+    tarjetaBebida.innerHTML = `
   <img src = ${bebida.imgUrl}>
-  <h4>${bebida.name}</h4>
-  <h4>${bebida.price}$</h4>
+  <h3>${bebida.name}</h3>
+  <h3>$${bebida.price}</h3>
+  <button class="boton" id=${bebida.id}>Agregar al carrito</button>
   `;
 
-  productos.append(tarjetaBebida);
-}
+    productos.append(tarjetaBebida);
+  }
+};
 
 const comprar = () => {
   let opcion = 0;
@@ -401,6 +439,9 @@ const filtrar = (tipoBebida) => {
   );
 };
 
+//Programa
+
+render();
 // let edad = Number(prompt("¿Cuántos años tenes?"));
 
 // acceso(edad);
