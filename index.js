@@ -214,37 +214,16 @@ const bebidas = [
   //     imgUrl: "./img/hielo.jpg" //   },
 ];
 
-let productos = document.getElementById("productos");
-let searchInput = document.getElementById("search");
-
-searchInput.oninput = () => {
-  let bebidasFiltradas = bebidas.filter((bebida) =>
-    bebida.name.includes(searchInput.value)
-  );
-  render(bebidasFiltradas);
-};
-let botones = document.getElementsByClassName("boton");
-let carrito = document.getElementById("carrito");
-
-console.log(botones);
-for (const boton of botones) {
-  // e = info del evento
-  boton.onclick = (e) => {
-    let bebidaBuscada = bebidas.find((bebida) => bebida.id == e.target.id);
-    let tarjetaCarrito = document.createElement("div");
-    tarjetaCarrito.className = "tarjetaCarrito";
-    tarjetaCarrito.innerHTML = `
-     <img src= ${bebidaBuscada.imgUrl}>
-      <div>
-       <h3>${bebidaBuscada.name}</h3>
-       <h3>$${bebidaBuscada.price}</h3>
-      </div>
-    `;
-    carrito.append(tarjetaCarrito);
-  };
+function acceso(edad) {
+  if (edad < 18) {
+    console.log("Acceso denegado");
+  } else {
+    console.log("Adelante");
+    comprar();
+  }
 }
-//Funciones
-const render = (bebidasFiltradas) => {
+
+function render(bebidasFiltradas) {
   let bebidasRenderizar = bebidas;
   if (bebidasFiltradas) {
     bebidasRenderizar = bebidasFiltradas;
@@ -256,192 +235,62 @@ const render = (bebidasFiltradas) => {
     let tarjetaBebida = document.createElement("div");
     tarjetaBebida.className = "producto";
     tarjetaBebida.innerHTML = `
-  <img src = ${bebida.imgUrl}>
-  <h3>${bebida.name}</h3>
-  <h3>$${bebida.price}</h3>
-  <button class="boton" id=${bebida.id}>Agregar al carrito</button>
-  `;
+    <img src = ${bebida.imgUrl}>
+    <h3>${bebida.name}</h3>
+    <h3>$${bebida.price}</h3>
+    <button class="boton" id=${bebida.id}>Agregar al carrito</button>
+    `;
 
     productos.append(tarjetaBebida);
   }
-};
+}
 
-const comprar = () => {
-  let opcion = 0;
-  let gastos = 0;
-  let compra = 0;
-  let filtro = 0;
-  let busqueda = 0;
-
-  do {
-    opcion = Number(
-      prompt(
-        "¿Qué desea hacer?\r1-Ver lista\r2-Buscar\r3-Filtrar Por Categoria\r4-Pagar\r0-Salir"
-      )
-    );
-    if (opcion == 1) {
-      const listaCompleta = bebidas.map(
-        (bebida) =>
-          bebida.id + ": " + bebida.name + " - Precio: $" + Number(bebida.price)
-      );
-      compra = Number(
-        prompt("Que desea comprar?\r0- Para salir\r" + listaCompleta.join("\r"))
-      );
-
-      do {
-        // -- Comprar --
-        if (compra == 1) {
-          const bebidaSeleccionada = bebidas.find((bebida) => bebida.id === 1);
-          gastos += bebidaSeleccionada.price;
-          compra = Number(
-            prompt("¿Algo más?\r0- Para salir\r" + listaCompleta.join("\r"))
-          );
-        }
-        if (compra === 2) {
-          const bebidaSeleccionada = bebidas.find((bebida) => bebida.id === 2);
-          gastos += bebidaSeleccionada.price;
-          compra = Number(
-            prompt("¿Algo más?\r0- Para salir\r" + listaCompleta.join("\r"))
-          );
-        }
-        if (compra === 3) {
-          const bebidaSeleccionada = bebidas.find((bebida) => bebida.id === 3);
-          gastos += bebidaSeleccionada.price;
-          compra = Number(
-            prompt("¿Algo más?\r0- Para salir\r" + listaCompleta.join("\r"))
-          );
-        }
-        if (compra === 4) {
-          const bebidaSeleccionada = bebidas.find((bebida) => bebida.id === 4);
-          gastos += bebidaSeleccionada.price;
-          compra = Number(
-            prompt("¿Algo más?\r0- Para salir\r" + listaCompleta.join("\r"))
-          );
-        }
-        if (compra === 5) {
-          const bebidaSeleccionada = bebidas.find((bebida) => bebida.id === 5);
-          gastos += bebidaSeleccionada.price;
-          compra = Number(
-            prompt("¿Algo más?\r0- Para salir\r" + listaCompleta.join("\r"))
-          );
-        }
-        if (compra === 6) {
-          const bebidaSeleccionada = bebidas.find((bebida) => bebida.id === 6);
-          gastos += bebidaSeleccionada.price;
-          compra = Number(
-            prompt("¿Algo más?\r0- Para salir\r" + listaCompleta.join("\r"))
-          );
-        }
-        if (compra > listaCompleta.length) {
-          compra = Number(
-            prompt(
-              "Elija una opcion valida\r0- Para salir\r" +
-                listaCompleta.join("\r")
-            )
-          );
-        }
-        if (compra == 0) {
-          break;
-        }
-      } while (compra !== 0);
-    }
-
-    // -- Buscar --
-    else if (opcion === 2) {
-      let bebidaBuscada = "";
-      do {
-        busqueda = prompt("Que desea buscar?\r0- Para salir");
-
-        if (busqueda == 0) {
-          break;
-        } else {
-          // buscar corona 330ml - skyy sriginal - quilmes clasica lata
-          for (const bebida of bebidas) {
-            if (busqueda == bebida.name) {
-              bebidaBuscada = bebida.name + " Precio: $" + bebida.price + "\r";
-              prompt(bebidaBuscada);
-            }
-          }
-        }
-      } while (busqueda !== 0);
-
-      // -- Filtrar --
-    } else if (opcion === 3) {
-      filtro = Number(
-        prompt("Que desea ver?\r0- Para salir\r1-Cervezas\r2-Vodkas")
-      );
-      do {
-        if (filtro == 1) {
-          filtro = prompt(filtrar("cerveza"));
-        }
-        if (filtro == 2) {
-          filtro = prompt(filtrar("vodka"));
-        }
-        if (filtro == 0) {
-          break;
-        }
-      } while (filtro !== 0);
-
-      // -- Pagar --
-    } else if (opcion === 4) {
-      if (gastos == 0) {
-        console.log("Usted no tiene nada para pagar");
-      } else {
-        console.log("Su total es: $" + gastos);
-        console.log("Gracias por su compra, ¡Hasta pronto!");
-        break;
-      }
-
-      // -- Salir --
-    } else if (opcion === 0) {
-      if (gastos !== 0) {
-        console.log("Antes de irte pagas $" + gastos);
-        console.log("Hasta pronto!");
-      } else {
-        console.log("Hasta pronto!");
-      }
-      break;
-    } else if (opcion >= 5) {
-      opcion = Number(
-        prompt(
-          "Elija una opción valida:\r1-Ver lista\r2-Buscar\r3-Filtrar Por Categoria\r4-Pagar\r0-Salir"
-        )
-      );
-    }
-  } while (opcion !== 0);
-};
-
-const acceso = (edad) => {
-  if (edad < 18) {
-    console.log("Acceso denegado");
-  } else {
-    console.log("Adelante");
-    comprar();
-  }
-};
-
-const filtrar = (tipoBebida) => {
-  let listaFiltrada = "";
-
-  const filtrado = bebidas.filter((el) => el.type == tipoBebida);
-
-  for (bebidaFiltrada of filtrado) {
-    listaFiltrada +=
-      "- " + bebidaFiltrada.name + " precio: $" + bebidaFiltrada.price + "\r";
-  }
-
-  return (
-    "Tenemos estas opciones de " +
-    tipoBebida +
-    ":\r" +
-    listaFiltrada +
-    "\r0- Para volver para atras"
-  );
-};
-
-//Programa
-
+let productos = document.getElementById("productos");
 render();
+
+let searchInput = document.getElementById("search");
+
+searchInput.oninput = () => {
+  let bebidasFiltradas = bebidas.filter((bebida) =>
+    bebida.name.includes(searchInput.value)
+  );
+  render(bebidasFiltradas);
+  console.log(bebidasFiltradas);
+};
+
+let botones = document.getElementsByClassName("boton");
+let carrito = document.getElementById("carrito");
+
+for (const boton of botones) {
+  // e = info del evento
+  boton.onClick = (e) => {
+    let bebidaBuscada = bebidas.find((bebida) => bebida.id == e.target.id);
+    let tarjetaCarrito = document.createElement("div");
+    tarjetaCarrito.className = "tarjetaCarrito";
+    tarjetaCarrito.innerHTML = `
+    <img src= ${bebidaBuscada.imgUrl}>
+    <div>
+    <h3>${bebidaBuscada.name}</h3>
+    <h3>$${bebidaBuscada.price}</h3>
+    </div>
+    `;
+    carrito.append(tarjetaCarrito);
+  };
+}
+
 // let edad = Number(prompt("¿Cuántos años tenes?"));
 
-// acceso(edad);
+// Toastify({
+//   text: "This is a toast",
+//   duration: 3000,
+//   destination: "https://github.com/apvarun/toastify-js",
+//   newWindow: true,
+//   close: true,
+//   gravity: "top", // `top` or `bottom`
+//   position: "left", // `left`, `center` or `right`
+//   stopOnFocus: true, // Prevents dismissing of toast on hover
+//   style: {
+//     background: "linear-gradient(to right, #00b09b, #96c93d)",
+//   },
+//   onClick: function () {}, // Callback after click
+// }).showToast();
