@@ -15,15 +15,31 @@
   <nav>
     <div>
       <img src="/img/bebidasLogo.png" alt="Logo bebidas" class="logo" />
+
       <input id="search" />
-      <img src="/img/carrito.png" alt="Ícono carrito" class="iconoCarrito" />
+      <img src="/img/lupa.png" class="lupa" />
+
+      <div>
+        <img
+          id="iconoCarrito"
+          src="/img/carrito.png"
+          alt="Ícono carrito"
+          class="iconoCarrito"
+        />
+        <button id="abrir">
+          <img src="/img/arrow.png" class="btnAbrir" />
+        </button>
+        <button id="cerrar">
+          <img src="/img/arrow.png" class="btnCerrar" />
+        </button>
+      </div>
     </div>
   </nav>
   <body>
-    <h1>Página de ventas de bebidas alcoholicas</h1>
+    <h1>Página de venta de bebidas alcoholicas</h1>
 
     <div id="productos"></div>
-    <div id="carrito"></div>
+    <div id="carrito" class="carritoHidden"></div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
@@ -32,4 +48,7 @@
     ></script>
     <script src="/index.js"></script>
   </body>
+  <footer>
+    <p>Footer en progreso</p>
+  </footer>
 </html>

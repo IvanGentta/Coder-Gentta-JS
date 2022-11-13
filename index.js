@@ -116,104 +116,117 @@ const bebidas = [
     mayorEdad: true,
     imgUrl: "/img/vino-novecento.jpg",
   },
-  //   {
-  //     id: 14,
-  //     name: "dante robino white blend",
-  //     type: "vino",
-  //     price: 1000,
-  //     cantidad: "750ml",
-  //     mayorEdad: true,
-  //     imgUrl: "./img/vino-dante.jpg" //   },
-  //   {
-  //     id: 15,
-  //     name: "capriccio dolcezza",
-  //     type: "vino",
-  //     price: 1000,
-  //     cantidad: "750ml",
-  //     mayorEdad: true,
-  //     imgUrl: "./img/vino-dolcezza.jpg" //   },
-  //   {
-  //     id: 16,
-  //     name: "cynar",
-  //     type: "destilados",
-  //     price: 1100,
-  //     cantidad: "750ml",
-  //     mayorEdad: true,
-  //     imgUrl: "./img/cynar.jpg" //   },
-  //   {
-  //     id: 17,
-  //     name: "aperol spritz",
-  //     type: "destilados",
-  //     price: 1500,
-  //     cantidad: "750ml",
-  //     mayorEdad: true,
-  //     imgUrl: "./img/aperol.jpg" //   },
-  //   {
-  //     id: 18,
-  //     name: "cinzano rosso",
-  //     type: "destilados",
-  //     price: 760,
-  //     cantidad: "1000ml",
-  //     mayorEdad: true,
-  //     imgUrl: "./img/cinzano.jpg" //   },
-  //   {
-  //     id: 19,
-  //     name: "campari",
-  //     type: "destilados",
-  //     price: 1300,
-  //     cantidad: "750ml",
-  //     mayorEdad: true,
-  //     imgUrl: "./img/campari.jpg" //   },
-  //   {
-  //     id: 20,
-  //     name: "paso de los toros pomelo",
-  //     type: "sin alcohol",
-  //     price: 285,
-  //     cantidad: "1,5L",
-  //     mayorEdad: false,
-  //     imgUrl: "./img/pasoToros-pomelo.jpg" //   },
-  //   {
-  //     id: 21,
-  //     name: "paso de los toros tónica",
-  //     type: "sin alcohol",
-  //     price: 285,
-  //     cantidad: "1,5L",
-  //     mayorEdad: false,
-  //     imgUrl: "./img/pasoToros-tonica.jpg" //   },
-  //   {
-  //     id: 22,
-  //     name: "pepsi clásica",
-  //     type: "sin alcohol",
-  //     price: 400,
-  //     cantidad: "1,5L",
-  //     mayorEdad: false,
-  //     imgUrl: "./img/pepsi.jpg" //   },
-  //   {
-  //     id: 23,
-  //     name: "7-Up clásica",
-  //     type: "sin alcohol",
-  //     price: 395,
-  //     cantidad: "1,5L",
-  //     mayorEdad: false,
-  //     imgUrl: "./img/7-up.jpg" //   },
-  //   {
-  //     id: 24,
-  //     name: "citric naranja",
-  //     type: "sin alcohol",
-  //     price: 400,
-  //     cantidad: "1L",
-  //     mayorEdad: false,
-  //     imgUrl: "./img/citric.jpg" //   },
-  //   {
-  //     id: 25,
-  //     name: "hielo",
-  //     type: "sin alcohol",
-  //     price: 400,
-  //     cantidad: "4K",
-  //     mayorEdad: false,
-  //     imgUrl: "./img/hielo.jpg" //   },
+  {
+    id: 14,
+    name: "dante robino white blend",
+    type: "vino",
+    price: 1000,
+    cantidad: "750ml",
+    mayorEdad: true,
+    imgUrl: "./img/vino-dante.jpg",
+  },
+  {
+    id: 15,
+    name: "capriccio dolcezza",
+    type: "vino",
+    price: 1000,
+    cantidad: "750ml",
+    mayorEdad: true,
+    imgUrl: "./img/vino-dolcezza.jpg",
+  },
+  {
+    id: 16,
+    name: "cynar",
+    type: "destilados",
+    price: 1100,
+    cantidad: "750ml",
+    mayorEdad: true,
+    imgUrl: "./img/cynar.jpg",
+  },
+  {
+    id: 17,
+    name: "aperol spritz",
+    type: "destilados",
+    price: 1500,
+    cantidad: "750ml",
+    mayorEdad: true,
+    imgUrl: "./img/aperol.jpg",
+  },
+  {
+    id: 18,
+    name: "cinzano rosso",
+    type: "destilados",
+    price: 760,
+    cantidad: "1000ml",
+    mayorEdad: true,
+    imgUrl: "./img/cinzano.jpg",
+  },
+  {
+    id: 19,
+    name: "campari",
+    type: "destilados",
+    price: 1300,
+    cantidad: "750ml",
+    mayorEdad: true,
+    imgUrl: "./img/campari.jpg",
+  },
+  {
+    id: 20,
+    name: "paso de los toros pomelo",
+    type: "sin alcohol",
+    price: 285,
+    cantidad: "1,5L",
+    mayorEdad: false,
+    imgUrl: "./img/pasoToros-pomelo.jpg",
+  },
+  {
+    id: 21,
+    name: "paso de los toros tónica",
+    type: "sin alcohol",
+    price: 285,
+    cantidad: "1,5L",
+    mayorEdad: false,
+    imgUrl: "./img/pasoToros-tonica.jpg",
+  },
+  {
+    id: 22,
+    name: "pepsi clásica",
+    type: "sin alcohol",
+    price: 400,
+    cantidad: "1,5L",
+    mayorEdad: false,
+    imgUrl: "./img/pepsi.jpg",
+  },
+  {
+    id: 23,
+    name: "7-Up clásica",
+    type: "sin alcohol",
+    price: 395,
+    cantidad: "1,5L",
+    mayorEdad: false,
+    imgUrl: "./img/7-up.jpg",
+  },
+  {
+    id: 24,
+    name: "citric naranja",
+    type: "sin alcohol",
+    price: 400,
+    cantidad: "1L",
+    mayorEdad: false,
+    imgUrl: "./img/citric.jpg",
+  },
+  {
+    id: 25,
+    name: "hielo",
+    type: "sin alcohol",
+    price: 400,
+    cantidad: "4K",
+    mayorEdad: false,
+    imgUrl: "./img/hielo.jpg",
+  },
 ];
 
+//Functions
 function acceso(edad) {
   if (edad < 18) {
     console.log("Acceso denegado");
@@ -222,6 +235,8 @@ function acceso(edad) {
     comprar();
   }
 }
+
+let bebidasFiltradas = bebidas;
 
 function render(bebidasFiltradas) {
   let bebidasRenderizar = bebidas;
@@ -243,40 +258,116 @@ function render(bebidasFiltradas) {
 
     productos.append(tarjetaBebida);
   }
+
+  for (const boton of botones) {
+    // e = info del evento
+    boton.onclick = (e) => {
+      let bebidaBuscada = bebidasRenderizar.find(
+        (bebida) => bebida.id == e.target.id
+      );
+
+      let dentroDeCarrito = storageCarrito.findIndex(
+        (bebida) => bebida.id == bebidaBuscada.id
+      );
+
+      if (dentroDeCarrito != -1) {
+        storageCarrito[dentroDeCarrito].unidades++;
+        storageCarrito[dentroDeCarrito].total =
+          storageCarrito[dentroDeCarrito].price *
+          storageCarrito[dentroDeCarrito].unidades;
+      } else {
+        storageCarrito.push({
+          id: bebidaBuscada.id,
+          name: bebidaBuscada.name,
+          unidades: 1,
+          price: bebidaBuscada.price,
+          total: bebidaBuscada.price,
+          imgUrl: bebidaBuscada.imgUrl,
+        });
+      }
+
+      console.log(storageCarrito);
+      localStorage.setItem("carrito", JSON.stringify(storageCarrito));
+      renderCarrito();
+    };
+  }
+}
+
+function renderCarrito() {
+  let total = 0;
+  carrito.innerHTML = "";
+
+  carrito.innerHTML = `<h1>Carrito</h1>
+  `;
+  for (const item of storageCarrito) {
+    total += item.total;
+    let tarjetaCarrito = document.createElement("div");
+    tarjetaCarrito.className = "tarjetaCarrito";
+    tarjetaCarrito.innerHTML = `
+    <img src= ${item.imgUrl}>
+    <div>
+    <h3>${item.name}</h3>
+    <h3>X${item.unidades} $${item.total}</h3>
+    </div>
+    `;
+
+    carrito.append(tarjetaCarrito);
+  }
+
+  carrito.innerHTML += `
+  <div class="tarjetaCarritoTotal">
+  <h3>Total: $${total} </h3>
+  <button id="pagar" class="btnPagar">Pagar</button>
+  </div>
+  `;
 }
 
 let productos = document.getElementById("productos");
-render();
-
+let botones = document.getElementsByClassName("boton");
+let carrito = document.getElementById("carrito");
 let searchInput = document.getElementById("search");
 
+const showCarrito = document.querySelector("#abrir");
+const hideCarrito = document.querySelector("#cerrar");
+
+showCarrito.addEventListener("click", () => {
+  if ((carrito.style.display = "none")) {
+    carrito.style.display = "flex";
+    hideCarrito.style.display = "flex";
+    showCarrito.style.display = "none";
+  }
+});
+hideCarrito.addEventListener("click", () => {
+  if ((carrito.style.display = "flex")) {
+    carrito.style.display = "none";
+    hideCarrito.style.display = "none";
+    showCarrito.style.display = "flex";
+  }
+});
+
+//Storage
+let storageCarrito = [];
+if (localStorage.getItem("carrito")) {
+  storageCarrito = JSON.parse(localStorage.getItem("carrito"));
+}
+
+//Programa
+render();
+renderCarrito();
 searchInput.oninput = () => {
-  let bebidasFiltradas = bebidas.filter((bebida) =>
-    bebida.name.includes(searchInput.value)
+  bebidasFiltradas = bebidas.filter((bebida) =>
+    bebida.name.includes(searchInput.value.toLowerCase())
   );
   render(bebidasFiltradas);
   console.log(bebidasFiltradas);
 };
 
-let botones = document.getElementsByClassName("boton");
-let carrito = document.getElementById("carrito");
-
-for (const boton of botones) {
-  // e = info del evento
-  boton.onClick = (e) => {
-    let bebidaBuscada = bebidas.find((bebida) => bebida.id == e.target.id);
-    let tarjetaCarrito = document.createElement("div");
-    tarjetaCarrito.className = "tarjetaCarrito";
-    tarjetaCarrito.innerHTML = `
-    <img src= ${bebidaBuscada.imgUrl}>
-    <div>
-    <h3>${bebidaBuscada.name}</h3>
-    <h3>$${bebidaBuscada.price}</h3>
-    </div>
-    `;
-    carrito.append(tarjetaCarrito);
-  };
-}
+let pagar = document.getElementById("pagar");
+pagar.onclick = () => {
+  storageCarrito = [];
+  localStorage.clear();
+  renderCarrito();
+};
 
 // let edad = Number(prompt("¿Cuántos años tenes?"));
 
