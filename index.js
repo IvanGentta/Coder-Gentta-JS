@@ -1,249 +1,5 @@
-const bebidas = [
-  {
-    id: 1,
-    name: "quilmes clasica lata",
-    type: "cerveza",
-    price: 200,
-    cantidad: "473ml",
-    mayorEdad: true,
-    imgUrl: "/img/quilmes-lata.jpg",
-  },
-  {
-    id: 2,
-    name: "stella artois lata",
-    type: "cerveza",
-    price: 310,
-    cantidad: "473ml",
-    mayorEdad: true,
-    imgUrl: "/img/stella-lata.jpg",
-  },
-  {
-    id: 3,
-    name: "corona 330ml",
-    type: "cerveza",
-    price: 300,
-    cantidad: "330ml",
-    mayorEdad: true,
-    imgUrl: "/img/corona-chica.jpg",
-  },
-  {
-    id: 4,
-    name: "corona 710ml",
-    type: "cerveza",
-    price: 530,
-    cantidad: "710ml",
-    mayorEdad: true,
-    imgUrl: "/img/corona-grande.jpg",
-  },
-  {
-    id: 5,
-    name: "absolute vodka pomelo",
-    type: "vodka",
-    price: 2764,
-    cantidad: "700ml",
-    mayorEdad: true,
-    imgUrl: "/img/absolute-pomelo.jpg",
-  },
-  {
-    id: 6,
-    name: "skyy original",
-    type: "vodka",
-    price: 1360,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/skyy-original.jpg",
-  },
-  {
-    id: 7,
-    name: "skyy raspberry",
-    type: "vodka",
-    price: 1650,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/skyy-raspberry.jpg",
-  },
-  {
-    id: 8,
-    name: "sernova vodka original",
-    type: "vodka",
-    price: 1340,
-    cantidad: "700ml",
-    mayorEdad: true,
-    imgUrl: "/img/sernova-original.jpg",
-  },
-  {
-    id: 9,
-    name: "ron havana club",
-    type: "destilados",
-    price: 2140,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/ron-havana.jpg",
-  },
-  {
-    id: 10,
-    name: "gin merle",
-    type: "destilados",
-    price: 1500,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/gin-merle.jpg",
-  },
-  {
-    id: 11,
-    name: "fernet branca",
-    type: "destilados",
-    price: 1500,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/fernet.jpg",
-  },
-  {
-    id: 12,
-    name: "emilia malbec",
-    type: "vino",
-    price: 985,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/vino-emilia.jpg",
-  },
-  {
-    id: 13,
-    name: "novecento malbec",
-    type: "vino",
-    price: 780,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "/img/vino-novecento.jpg",
-  },
-  {
-    id: 14,
-    name: "dante robino white blend",
-    type: "vino",
-    price: 1000,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "./img/vino-dante.jpg",
-  },
-  {
-    id: 15,
-    name: "capriccio dolcezza",
-    type: "vino",
-    price: 1000,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "./img/vino-dolcezza.jpg",
-  },
-  {
-    id: 16,
-    name: "cynar",
-    type: "destilados",
-    price: 1100,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "./img/cynar.jpg",
-  },
-  {
-    id: 17,
-    name: "aperol spritz",
-    type: "destilados",
-    price: 1500,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "./img/aperol.jpg",
-  },
-  {
-    id: 18,
-    name: "cinzano rosso",
-    type: "destilados",
-    price: 760,
-    cantidad: "1000ml",
-    mayorEdad: true,
-    imgUrl: "./img/cinzano.jpg",
-  },
-  {
-    id: 19,
-    name: "campari",
-    type: "destilados",
-    price: 1300,
-    cantidad: "750ml",
-    mayorEdad: true,
-    imgUrl: "./img/campari.jpg",
-  },
-  {
-    id: 20,
-    name: "paso de los toros pomelo",
-    type: "sin alcohol",
-    price: 285,
-    cantidad: "1,5L",
-    mayorEdad: false,
-    imgUrl: "./img/pasoToros-pomelo.jpg",
-  },
-  {
-    id: 21,
-    name: "paso de los toros tónica",
-    type: "sin alcohol",
-    price: 285,
-    cantidad: "1,5L",
-    mayorEdad: false,
-    imgUrl: "./img/pasoToros-tonica.jpg",
-  },
-  {
-    id: 22,
-    name: "pepsi clásica",
-    type: "sin alcohol",
-    price: 400,
-    cantidad: "1,5L",
-    mayorEdad: false,
-    imgUrl: "./img/pepsi.jpg",
-  },
-  {
-    id: 23,
-    name: "7-Up clásica",
-    type: "sin alcohol",
-    price: 395,
-    cantidad: "1,5L",
-    mayorEdad: false,
-    imgUrl: "./img/7-up.jpg",
-  },
-  {
-    id: 24,
-    name: "citric naranja",
-    type: "sin alcohol",
-    price: 400,
-    cantidad: "1L",
-    mayorEdad: false,
-    imgUrl: "./img/citric.jpg",
-  },
-  {
-    id: 25,
-    name: "hielo",
-    type: "sin alcohol",
-    price: 400,
-    cantidad: "4K",
-    mayorEdad: false,
-    imgUrl: "./img/hielo.jpg",
-  },
-];
-
-//Functions
-function acceso(edad) {
-  if (edad < 18) {
-    console.log("Acceso denegado");
-  } else {
-    console.log("Adelante");
-    comprar();
-  }
-}
-
-let bebidasFiltradas = bebidas;
-
-function render(bebidasFiltradas) {
-  let bebidasRenderizar = bebidas;
-  if (bebidasFiltradas) {
-    bebidasRenderizar = bebidasFiltradas;
-  }
-
+// --- Funciones ---
+function render(bebidasRenderizar) {
   productos.innerHTML = "";
 
   for (const bebida of bebidasRenderizar) {
@@ -285,8 +41,20 @@ function render(bebidasFiltradas) {
           imgUrl: bebidaBuscada.imgUrl,
         });
       }
+      Toastify({
+        text: "Item agregado al carrito",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
 
-      console.log(storageCarrito);
       localStorage.setItem("carrito", JSON.stringify(storageCarrito));
       renderCarrito();
     };
@@ -320,7 +88,27 @@ function renderCarrito() {
   <button id="pagar" class="btnPagar">Pagar</button>
   </div>
   `;
+
+  let pagar = document.getElementById("pagar");
+  pagar.onclick = () => {
+    storageCarrito = [];
+    localStorage.clear();
+    renderCarrito();
+  };
 }
+
+function categoria(categoria) {
+  const bebidasFiltradasCategoria = bebidasRenderizar.filter(
+    (bebida) => bebida.type == categoria
+  );
+  render(bebidasFiltradasCategoria);
+}
+
+// --- Programa ---
+let edad = "";
+let storageCarrito = [];
+let bebidasFiltradas = [];
+let bebidasRenderizar = [];
 
 let productos = document.getElementById("productos");
 let botones = document.getElementsByClassName("boton");
@@ -330,6 +118,27 @@ let searchInput = document.getElementById("search");
 const showCarrito = document.querySelector("#abrir");
 const hideCarrito = document.querySelector("#cerrar");
 
+const todo = document.getElementById("todo");
+const cervezas = document.getElementById("cervezas");
+const destilados = document.getElementById("destilados");
+const vinos = document.getElementById("vinos");
+const sinAlcohol = document.getElementById("sinAlcohol");
+
+todo.onclick = () => {
+  render(bebidasRenderizar);
+};
+cervezas.onclick = () => {
+  categoria("cerveza");
+};
+destilados.onclick = () => {
+  categoria("destilados");
+};
+vinos.onclick = () => {
+  categoria("vino");
+};
+sinAlcohol.onclick = () => {
+  categoria("sin alcohol");
+};
 showCarrito.addEventListener("click", () => {
   if ((carrito.style.display = "none")) {
     carrito.style.display = "flex";
@@ -345,43 +154,22 @@ hideCarrito.addEventListener("click", () => {
   }
 });
 
+fetch("./bebidas.json")
+  .then((res) => res.json())
+  .then((bebidas) => {
+    bebidasRenderizar = bebidas;
+    render(bebidasRenderizar);
+  });
+
 //Storage
-let storageCarrito = [];
 if (localStorage.getItem("carrito")) {
   storageCarrito = JSON.parse(localStorage.getItem("carrito"));
 }
-
-//Programa
-render();
+render(bebidasRenderizar);
 renderCarrito();
 searchInput.oninput = () => {
-  bebidasFiltradas = bebidas.filter((bebida) =>
+  bebidasFiltradas = bebidasRenderizar.filter((bebida) =>
     bebida.name.includes(searchInput.value.toLowerCase())
   );
   render(bebidasFiltradas);
-  console.log(bebidasFiltradas);
 };
-
-let pagar = document.getElementById("pagar");
-pagar.onclick = () => {
-  storageCarrito = [];
-  localStorage.clear();
-  renderCarrito();
-};
-
-// let edad = Number(prompt("¿Cuántos años tenes?"));
-
-// Toastify({
-//   text: "This is a toast",
-//   duration: 3000,
-//   destination: "https://github.com/apvarun/toastify-js",
-//   newWindow: true,
-//   close: true,
-//   gravity: "top", // `top` or `bottom`
-//   position: "left", // `left`, `center` or `right`
-//   stopOnFocus: true, // Prevents dismissing of toast on hover
-//   style: {
-//     background: "linear-gradient(to right, #00b09b, #96c93d)",
-//   },
-//   onClick: function () {}, // Callback after click
-// }).showToast();

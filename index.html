@@ -16,8 +16,7 @@
     <div>
       <img src="/img/bebidasLogo.png" alt="Logo bebidas" class="logo" />
 
-      <input id="search" />
-      <img src="/img/lupa.png" class="lupa" />
+      <input id="search" placeholder="Buscar" />
 
       <div>
         <img
@@ -37,6 +36,13 @@
   </nav>
   <body>
     <h1>Página de venta de bebidas alcoholicas</h1>
+    <div class="divCategorias">
+      <button id="todo" class="botonCategoria">Todo</button>
+      <button id="cervezas" class="botonCategoria">Cervezas</button>
+      <button id="destilados" class="botonCategoria">Destilados</button>
+      <button id="vinos" class="botonCategoria">Vinos</button>
+      <button id="sinAlcohol" class="botonCategoria">Sin Alcohol</button>
+    </div>
 
     <div id="productos"></div>
     <div id="carrito" class="carritoHidden"></div>
@@ -49,6 +55,24 @@
     <script src="/index.js"></script>
   </body>
   <footer>
-    <p>Footer en progreso</p>
+    <div class="divFooter">
+      <img src="/img/bebidasLogo.png" alt="logo bebidas" class="logo" />
+      <div class="divIconos">
+        <a
+          href="https://www.linkedin.com/in/iv%C3%A1n-ariel-gentta-117077231/"
+          target="_blank"
+        >
+          <img src="/img/linkedin.png" alt="" class="iconos" />
+        </a>
+        <img src="/img/facebook.png" alt="" class="iconos" />
+        <img src="/img/instagram.png" alt="" class="iconos" />
+      </div>
+      <img class="qr" src="/img/QR.png" alt="QR" />
+    </div>
+    <hr />
+    <p>
+      © 2022 Bebidas - BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18
+      AÑOS.
+    </p>
   </footer>
 </html>
