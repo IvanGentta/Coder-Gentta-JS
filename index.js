@@ -90,11 +90,18 @@ function renderCarrito() {
   `;
 
   let pagar = document.getElementById("pagar");
-  pagar.onclick = () => {
-    storageCarrito = [];
-    localStorage.clear();
-    renderCarrito();
-  };
+  if (storageCarrito.length > 0) {
+    pagar.onclick = () => {
+      storageCarrito = [];
+      localStorage.clear();
+      renderCarrito();
+      Swal.fire(
+        "¡ Muchas gracias por tu compra !",
+        "Vuelva pronto :)",
+        "success"
+      );
+    };
+  }
 }
 
 function categoria(categoria) {
@@ -105,7 +112,6 @@ function categoria(categoria) {
 }
 
 // --- Programa ---
-let edad = "";
 let storageCarrito = [];
 let bebidasFiltradas = [];
 let bebidasRenderizar = [];
@@ -154,6 +160,7 @@ hideCarrito.addEventListener("click", () => {
   }
 });
 
+//Fetch
 fetch("./bebidas.json")
   .then((res) => res.json())
   .then((bebidas) => {
